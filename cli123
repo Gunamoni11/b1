@@ -1,6 +1,6 @@
 node('main'){
     stage('Launch configuration'){
-        def cmd = "aws autoscaling create-launch-configuration --launch-configuration-name mylc1 --image-id ami-0fb653ca2d3203ac1 --instance-type t2.micro --security-groups sg-0244e3f85210cc582 --key-name terra --user-data file://userdata.json --region us-east-2"
+        def cmd = "aws autoscaling create-launch-configuration --launch-configuration-name mylc1 --image-id ami-0fb653ca2d3203ac1 --instance-type t2.micro --security-groups sg-0244e3f85210cc582 --key-name terra --user-data 'file://userdata.json' --region us-east-2"
         sh (cmd)
     }
     stage('Auto scaling'){
